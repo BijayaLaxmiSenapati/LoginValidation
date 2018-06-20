@@ -43,6 +43,52 @@ public class JdbcTransaction
 			}
 			//e.printStackTrace();
 		}
-		
+		finally
+		{
+			if(st2!=null)
+			{
+				try
+				{
+					st2.close();
+				}
+				catch(SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+			if(st1!=null)
+			{
+				try
+				{
+					st1.close();
+				}
+				catch(SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+			if(st!=null)
+			{
+				try
+				{
+					st.close();
+				}
+				catch(SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+			if(con!=null)
+			{
+				try
+				{
+					con.close();
+				}
+				catch(SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 }
